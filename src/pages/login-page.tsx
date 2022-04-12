@@ -81,6 +81,7 @@ function LoginPage() {
           <Button
             disabled={!username.length || !password.length}
             onClick={login}
+            data-cy={'loginBtn'}
           >
             Log In
           </Button>

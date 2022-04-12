@@ -169,7 +169,7 @@ const StyledToggleButton = styled(Button)`
 `;
 
 export const ToggleButton = ({ mode, onClick }: ToggleButtonProps) => (
-  <StyledToggleContainer mode={mode}>
+  <StyledToggleContainer mode={mode} data-cy={'toggle'}>
     <StyledToggleButton onClick={onClick} />
   </StyledToggleContainer>
 );

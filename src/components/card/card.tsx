@@ -31,7 +31,7 @@ const StyledCard = styled.div<{ isLink?: boolean }>`
     `};
 `;
 
-export const Card = withRouter(({ linkTo, history, children }: CardProps) => {
+export const Card = withRouter(({ linkTo, history, children, ...props }: CardProps) => {
   const handleClick = function (
     event: React.MouseEvent<HTMLElement, MouseEvent>
   ) {
@@ -39,7 +39,7 @@ export const Card = withRouter(({ linkTo, history, children }: CardProps) => {
   };
 
   return (
-    <StyledCard isLink={!!linkTo} onClick={handleClick}>
+    <StyledCard isLink={!!linkTo} onClick={handleClick} {...props}>
       {children}
     </StyledCard>
   );

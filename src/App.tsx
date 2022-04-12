@@ -41,7 +41,7 @@ function App() {
                 <User.Group>
                   <User.User username={authTokens.username} isLoggedUser />
                 </User.Group>
-                <LogOutButton onClick={() => setAuthTokens(false)}>
+                <LogOutButton onClick={() => setAuthTokens(false)} data-cy={'logOutBtn'}>
                   Log Out
                 </LogOutButton>
               </Nav.Auth>

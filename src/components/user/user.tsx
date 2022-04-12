@@ -105,6 +105,7 @@ export const User = ({
   isCurrentUser = false,
   isLoggedUser = false,
   onClick,
+    ...props
 }: UserProps) => (
   <li>
     <StyledUser
@@ -119,6 +120,7 @@ export const User = ({
             }
           : undefined
       }
+      {...props}
     >
       {username}
     </StyledUser>
