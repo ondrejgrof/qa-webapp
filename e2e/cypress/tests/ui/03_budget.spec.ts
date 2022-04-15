@@ -72,7 +72,7 @@ describe('Budget', () => {
         })
     })
 
-    it('adds/ delete entry to/from budget category', () => {
+    it('adds/ deletes entry to/from budget category', () => {
         cy.getElByCySel('budgetCard').should('not.exist')
 
         budgets.forEach(budget => {

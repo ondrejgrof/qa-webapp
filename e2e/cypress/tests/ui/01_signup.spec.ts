@@ -16,7 +16,7 @@ describe('SignUp', () => {
         cy.visit('/signup')
     })
 
-    it('signup new user', () => {
+    it('does signup new user', () => {
         cy.signUp(users[0].name, users[0].password)
         cy.location('pathname').should('eq', '/login')
         cy.getLocalStorage('users').then(($value) => {
@@ -29,7 +29,7 @@ describe('SignUp', () => {
         cy.getLocalStorage('authToken').should('not.eq', 'false')
     })
 
-    it('signup new user by enter', () => {
+    it('does signup new user by enter', () => {
         cy.signUpByEnter(users[0].name, users[0].password)
         cy.location('pathname').should('eq', '/login')
         cy.getLocalStorage('users').then(($value) => {
@@ -42,7 +42,7 @@ describe('SignUp', () => {
         cy.getLocalStorage('authToken').should('not.eq', 'false')
     })
 
-    it('signup the same user twice', () => {
+    it('does not signup the same user twice', () => {
         cy.signUp(users[0].name, users[0].password)
 
         cy.visit('/signup')

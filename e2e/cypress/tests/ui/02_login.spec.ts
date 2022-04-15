@@ -27,6 +27,13 @@ describe('LoginModule', () => {
         cy.getLocalStorage('authTokens').should('not.eq', 'false')
     })
 
+    it('does not LogIn not existing user', () => {
+        cy.logIn('NotExist', 'NotExist')
+        cy.location('pathname').should('eq', '/login')
+        cy.getLocalStorage('authTokens').should('eq', 'false')
+        cy.contains('div', 'Invalid username or password')
+    })
+
     it('does logout', () => {
         cy.logIn(users[0].name, users[0].password)
         cy.location('pathname').should('eq', '/lists')
@@ -38,18 +45,18 @@ describe('LoginModule', () => {
 
     })
 
-    it("redirects unauthenticated user to login page",  () => {
+    it("redirects the unauthenticated user to the login page",  () => {
         cy.visit("/lists")
         cy.location("pathname").should("equal", "/login")
     })
 
-    it('does not allow to redirect authenticated user to login page', () => {
+    it('does not allow redirecting the authenticated user to the login page', () => {
         cy.logIn(users[0].name, users[0].password)
         cy.visit('/login')
         cy.location('pathname').should('eq', '/lists')
     })
 
-    it('redirect to signup page', () => {
+    it('redirects to the signup page', () => {
 
         cy.contains('a', 'Sign Up').click()
         cy.location('pathname').should('eq', '/signup')
@@ -65,12 +72,12 @@ describe('LoginModule', () => {
             cy.getElByCySel('loginBtn').should('be.disabled')
         })
 
-        it('should not be able to click Log In with empty UserName', () => {
+        it('should not be able to click Log In with an empty UserName', () => {
             cy.get('input[type=\'password\']').type('test')
             cy.getElByCySel('loginBtn').should('be.disabled')
         })
 
-        it('should not be able to click Log In with empty Password', () => {
+        it('should not be able to click Log In with an empty Password', () => {
             cy.get('input[type=\'username\']').type('test')
             cy.getElByCySel('loginBtn').should('be.disabled')
         })
