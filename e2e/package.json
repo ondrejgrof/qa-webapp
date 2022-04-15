@@ -1,0 +1,17 @@
+{
+  "name": "e2e",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.6.3",
+    "bcryptjs": "^2.4.3",
+    "nanoid": "^2.1.11",
+    "cypress": "^9.5.4",
+    "cypress-localstorage-commands": "^1.7.0"
+  }
+}

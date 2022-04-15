@@ -103,6 +103,7 @@ const StatsPage = () => {
           <Form.Select
             label="Filter by List"
             value={list}
+            data-cy={"budgetStatsSelect"}
             onChange={(event) => setList(event.target.value)}
             width="160px"
           >

@@ -77,7 +77,7 @@ const ListsPage = () => {
     <main>
       <Title.PageTitle>My Budgets</Title.PageTitle>
       {availableLists.map((list) => (
-        <Card.Card key={list.id} linkTo={`${match.url}/${list.id}`}>
+        <Card.Card key={list.id} linkTo={`${match.url}/${list.id}`} data-cy={'budgetCard'}>
           <Card.Section>
             <Title.CardTitle>{list.title}</Title.CardTitle>
             <User.Group>
@@ -95,6 +95,7 @@ const ListsPage = () => {
                         ? undefined
                         : () => deleteUserFromList(list.id, user.id)
                     }
+                    data-cy={'budgetUser'}
                   />
                 );
               })}
@@ -109,6 +110,7 @@ const ListsPage = () => {
                 event.target.blur();
               }}
               width="128px"
+              data-cy={'cardUserSelect'}
             >
               {availableUsers(users, list.users).map((user) => (
                 <option key={user.id} value={user.id}>
@@ -119,6 +121,7 @@ const ListsPage = () => {
             <Button
               icon={ButtonIconType.Delete}
               onClick={() => deleteList(list.id)}
+              data-cy={'deleteCardButton'}
             />
           </Card.Section>
         </Card.Card>
@@ -129,6 +132,7 @@ const ListsPage = () => {
           <Form.TextInput
             value={title}
             label="Budget Name"
+            data-cy={'newBudgetNameInput'}
             onChange={(event) => setTitle(event.target.value)}
             width="256px"
           />
@@ -136,6 +140,7 @@ const ListsPage = () => {
         <Card.Section>
           <Button
             icon={ButtonIconType.Create}
+            data-cy={'createBudgetBtn'}
             disabled={!title.length}
             onClick={createList}
           />

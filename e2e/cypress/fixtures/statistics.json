@@ -1,0 +1,54 @@
+{
+  "budgets": [
+    {
+      "name": "Transport",
+      "entries": [
+        {
+          "name": "Bus",
+          "category": "Other",
+          "amount": 123
+        },
+        {
+          "name": "Plane",
+          "category": "Transport",
+          "amount": -3420
+        },
+        {
+          "name": "Train",
+          "category": "Transport",
+          "amount": 224
+        }
+      ]
+    },
+    {
+      "name": "Food",
+      "entries": [
+        {
+          "name": "Taro",
+          "category": "Food and Drinks",
+          "amount": 4302
+        },
+        {
+          "name": "Field",
+          "category": "Food and Drinks",
+          "amount": -2340
+        }
+      ]
+    },
+    {
+      "name": "Traveling",
+      "entries": [
+        {
+          "name": "Vietnam",
+          "category": "Entertainment",
+          "amount": 4302
+        },
+        {
+          "name": "Spain",
+          "category": "Entertainment",
+          "amount": -8392
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "name": "Train",
+      "category": "Transport",
+      "amount": -493
+    },
+    {
+      "name": "Grill",
+      "category": "House and Garden",
+      "amount": -1493
+    },
+    {
+      "name": "Dinner",
+      "category": "Food and Drinks",
+      "amount": 4302
+    },
+    {
+      "name": "Tickets",
+      "category": "Entertainment",
+      "amount": 5443
+    }
+  ]
+}

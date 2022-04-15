@@ -31,7 +31,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "pretty": "prettier --write \"./**/*.{js,ts,tsx}\"" 
+    "pretty": "prettier --write \"./**/*.{js,ts,tsx}\""
 
   },
   "eslintConfig": {

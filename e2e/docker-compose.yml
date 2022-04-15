@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  qa-webapp:
+    image: qa-webapp
+    build: ../
+    ports:
+      - "3567:3000"
+    container_name: qa-webapp
+
+  e2e:
+    image: cypress
+    build: .
+    container_name: cypress
+    depends_on:
+      - qa-webapp
+    environment:
+      - CYPRESS_baseUrl=http://host.docker.internal:3567
+    command: npx cypress run
+    volumes:
+      - ./cypress:/app/cypress
+      - ./cypress.json:/app/cypress.json

@@ -7,10 +7,12 @@
 
 # testing
 /coverage
+/e2e/node_modules
 
 # production
 /build
 
+.idea/
 # misc
 .DS_Store
 .env.local

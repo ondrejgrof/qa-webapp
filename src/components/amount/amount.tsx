@@ -19,7 +19,7 @@ const Amount = ({ value }: AmountProps) => {
   const isNegative = value < 0;
   const sign = value < 0 ? "-" : "+";
   return (
-    <StyledAmount isNegative={isNegative}>
+    <StyledAmount isNegative={isNegative} data-cy={'amount'}>
       {sign} {Math.abs(value)}
     </StyledAmount>
   );

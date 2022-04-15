@@ -68,13 +68,13 @@ const ListItemsPage = ({ history }: RouteComponentProps<any>) => {
   return (
     <main>
       <Title.PageTitle>
-        <BackButton onClick={() => history.goBack()} />
+        <BackButton onClick={() => history.goBack()} data-cy={'budgetDetailGoBackBtn'}/>
         {list.title}
       </Title.PageTitle>
       {list.items.map((item) => {
         const isCurrentUser = !!(authTokens && item.user.id === authTokens.id);
         return (
-          <Card.Card key={item.id}>
+          <Card.Card key={item.id} data-cy={'entryCard'}>
             <Card.Section>
               <Title.CardTitle>{item.title}</Title.CardTitle>
               <Title.CardSubTitle>
@@ -82,13 +82,14 @@ const ListItemsPage = ({ history }: RouteComponentProps<any>) => {
               </Title.CardSubTitle>
               <User.Group>
                 <User.User
+                    data-cy={"entryUser"}
                   username={isCurrentUser ? "You" : item.user.username}
                   isCurrentUser={isCurrentUser}
                 />
               </User.Group>
             </Card.Section>
             <Card.Section>
-              <Amount value={item.amount} />
+              <Amount value={item.amount} data-cy={'entryAmount'}/>
               <Button
                 icon={ButtonIconType.Delete}
                 onClick={() => deleteItem(item.id)}
@@ -104,11 +105,13 @@ const ListItemsPage = ({ history }: RouteComponentProps<any>) => {
           <Form.TextInput
             value={title}
             label="Entry Name"
+            data-cy="budgetItemNameInput"
             onChange={(event) => setTitle(event.target.value)}
             width="216px"
           />
           <Form.Select
             label="Select Category"
+            data-cy="budgetItemCategorySelect"
             value={category}
             onChange={(event) =>
               setCategory(event.target.value as CategoryType)
@@ -132,11 +135,13 @@ const ListItemsPage = ({ history }: RouteComponentProps<any>) => {
           <Form.TextInput
             value={amount}
             label="Amount"
+            data-cy="budgetItemAmountInput"
             onChange={(event) => setAmount(event.target.value)}
             width="112px"
           />
           <Button
             icon={ButtonIconType.Create}
+            data-cy="budgetItemCreateBtn"
             disabled={
               !(title.length && category !== "" && isPositiveNumber(amount))
             }

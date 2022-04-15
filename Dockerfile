@@ -7,6 +7,7 @@ COPY public public
 COPY src src
 COPY package.json .
 COPY tsconfig.json .
+COPY yarn.lock .
 
 RUN yarn install
 

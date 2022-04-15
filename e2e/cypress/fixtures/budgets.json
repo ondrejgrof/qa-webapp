@@ -1,0 +1,13 @@
+{
+  "budgets": [
+    {
+      "name": "Transport"
+    },
+    {
+      "name": "Food"
+    },
+    {
+      "name": "Traveling"
+    }
+  ]
+}

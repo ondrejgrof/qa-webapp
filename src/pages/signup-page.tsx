@@ -96,6 +96,7 @@ function SignupPage() {
               !(username.length && password.length && password === passwordTest)
             }
             onClick={signup}
+            data-cy={'signUpBtn'}
           >
             Sign Up
           </Button>
